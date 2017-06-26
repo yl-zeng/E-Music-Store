@@ -2,68 +2,18 @@ package com.emusicstore.dao;
 
 import com.emusicstore.model.Product;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by genji on 6/25/2017.
+ * Created by genji on 6/26/2017.
  */
-public class ProductDao {
+public interface ProductDao {
 
-    private List<Product> productList;
+    void addProduct(Product product);
 
-    public List<Product> getProductList(){
-        Product product1 = new Product();
+    Product getProductById(Long id);
 
-        product1.setProductId("1");
-        product1.setProductName("Guitar1");
-        product1.setProductCategory("Instrument");
-        product1.setProductDescription("This is a fender strat guitar");
-        product1.setProductPrice(1200);
-        product1.setProductCondition("new");
-        product1.setProductStatus("Active");
-        product1.setUnitInStock(11);
-        product1.setProductManufacturer("Fender");
+    List<Product> getAllProducts();
 
-        Product product2 = new Product();
-
-        product2.setProductId("2");
-        product2.setProductName("Guitar2");
-        product2.setProductCategory("Instrument");
-        product2.setProductDescription("This is a fender2 strat guitar");
-        product2.setProductPrice(12);
-        product2.setProductCondition("new");
-        product2.setProductStatus("Active");
-        product2.setUnitInStock(13);
-        product2.setProductManufacturer("Fender");
-
-        Product product3 = new Product();
-
-        product3.setProductId("3");
-        product3.setProductName("Guitar3");
-        product3.setProductCategory("Instrument");
-        product3.setProductDescription("This is a fender3 strat guitar");
-        product3.setProductPrice(192);
-        product3.setProductCondition("new");
-        product3.setProductStatus("Active");
-        product3.setUnitInStock(193);
-        product3.setProductManufacturer("Fender3");
-
-        productList = new ArrayList<Product>();
-        productList.add(product1);
-        productList.add(product2);
-        productList.add(product3);
-
-        return productList;
-    }
-
-    public Product getProductById(String productId) throws IOException{
-        for(Product product:getProductList()){
-            if(product.getProductId().equals(productId)){
-                return product;
-            }
-        }
-        throw new IOException("No product find");
-    }
+    void deleteProduct(Long id);
 }

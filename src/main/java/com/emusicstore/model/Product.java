@@ -1,11 +1,19 @@
 package com.emusicstore.model;
 
+import javax.persistence.*;
+
 /**
  * Created by genji on 6/25/2017.
  */
+
+@Entity
+@Table(name="Product")
 public class Product {
 
-    private String productId;
+    @Id
+    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long productId;
     private String productName;
     private String productCategory;
     private String productDescription;
@@ -71,11 +79,11 @@ public class Product {
         this.unitInStock = unitInStock;
     }
 
-    public String getProductId() {
+    public Long getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
 
