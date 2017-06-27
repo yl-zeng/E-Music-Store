@@ -12,9 +12,9 @@
 <div class="container-wrapper" style="margin-top:50px">
     <div class="container">
         <div class="page-header">
-            <h1>Our Products</h1>
+            <h1>Product Inventory Page</h1>
 
-            <p class="lead">Checkout all the awesome product available now</p>
+            <p class="lead">This is Inventory Page</p>
 
             <table class="table table-striped table-hover">
                 <thead>
@@ -42,6 +42,8 @@
                     </tr>
                 </c:forEach>
             </table>
+
+            <a href="<spring:url value="/admin/productInventory/addProduct"/>" ><button class="btn btn-primary">Add Product</button></a>
 
         </div>
 
