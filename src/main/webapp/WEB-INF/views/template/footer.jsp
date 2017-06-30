@@ -13,5 +13,8 @@
 <script src="<c:url value='/resources/js/jquery.min.js'/>"></script>
 <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
 
+<!-- Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+
 </body>
 </html>
