@@ -29,7 +29,7 @@ import java.util.List;
 public class AdminController {
 
     private Path path;
-    
+
     @Autowired
     private ProductDao productDao;
 
