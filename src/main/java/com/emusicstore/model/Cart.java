@@ -7,7 +7,7 @@ import java.util.HashMap;
  */
 public class Cart {
 
-    private Long cartId;
+    private String cartId;
     private HashMap<Long,CartItem> cartItems;
 
     private double grandTotal;
@@ -16,16 +16,16 @@ public class Cart {
         cartItems = new HashMap<Long,CartItem>();
     }
 
-    public Cart(Long cartId){
+    public Cart(String cartId){
         this();
         this.cartId = cartId;
     }
 
-    public Long getCartId() {
+    public String getCartId() {
         return cartId;
     }
 
-    public void setCartId(Long cartId) {
+    public void setCartId(String cartId) {
         this.cartId = cartId;
     }
 

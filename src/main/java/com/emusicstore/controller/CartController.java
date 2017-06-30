@@ -27,26 +27,27 @@ public class CartController {
     private ProductDao productDao;
 
     @RequestMapping(value = "/{cartId}", method = RequestMethod.GET)
-    public @ResponseBody    Cart read(@PathVariable(value = "cartId") Long cartId) {
+    public @ResponseBody    Cart read(@PathVariable(value = "cartId") String cartId) {
         return cartDao.read(cartId);
     }
 
     @RequestMapping(value="/{cartId}", method = RequestMethod.PUT)
     @ResponseStatus(value= HttpStatus.NO_CONTENT)
-    public void update(@PathVariable(value="cartId") Long cartId, @RequestBody Cart cart){
+    public void update(@PathVariable(value="cartId") String cartId, @RequestBody Cart cart){
         cartDao.update(cartId,cart);
     }
 
     @RequestMapping(value="/{cartId}",method=RequestMethod.DELETE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable(value="cartId") Long cartId){
+    public void delete(@PathVariable(value="cartId") String cartId){
         cartDao.delete(cartId);
     }
+
 
     @RequestMapping(value="/add/{productId}",method = RequestMethod.PUT)
     @ResponseStatus(value=HttpStatus.NO_CONTENT)
     public void addItem(@PathVariable(value="productId") Long productId, HttpServletRequest request){
-        Long sessionId = Long.parseLong(request.getSession(true).getId());
+        String sessionId = request.getSession(true).getId();
 
         Cart cart = cartDao.read(sessionId);
 
@@ -67,7 +68,7 @@ public class CartController {
     @RequestMapping(value="/remove/{productId}",method = RequestMethod.PUT)
     @ResponseStatus(value=HttpStatus.NO_CONTENT)
     public void removeItem(@PathVariable(value="productId") Long productId,HttpServletRequest request){
-        Long sessionId = Long.parseLong(request.getSession(true).getId());
+        String sessionId = request.getSession(true).getId();
 
         Cart cart = cartDao.read(sessionId);
 

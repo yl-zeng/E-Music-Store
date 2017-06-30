@@ -1,4 +1,5 @@
-<%@ include file="/WEB-INF/views/template/footer.jsp" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ include file="/WEB-INF/views/template/header.jsp" %>
 
 
 <section>
@@ -12,12 +13,13 @@
 </section>
 
 <section class="container" ng-app="cartApp">
-    <div>
-        <a class="btn btn-danger pull-left"><span class="glyphicon glyphicon-remove-sign"/>Clear Cart</a>
-    </div>
+    <div ng-controller="cartCtrl" ng-init="initCartId('${cartId}')">
+        <div>
+            <a class="btn btn-danger pull-left" ng-click="clearCart('${cartId}')">
+                <span class="glyphicon glyphicon-remove-sign"/>Clear Cart</a>
+        </div>
 
-    <table class="table table-hover">
-        <div ng-controller="cartCtrl" ng-init="initCartId('${cartId}')">
+        <table class="table table-hover">
             <tr>
                 <th>Product</th>
                 <th>Unit Price</th>
@@ -41,12 +43,13 @@
                 <th>{{cart.grandTotal}}</th>
                 <th></th>
             </tr>
-        </div>
-    </table>
+        </table>
 
-    <a href="<spring:url value="/productList" />" class="btn btn-default">Continue Shopping</a>
-
+        <a href="<spring:url value="/productList" />" class="btn btn-default">Continue Shopping</a>
+    </div>
 </section>
 
+<!-- Angular Controller -->
 
+<script src="<c:url value="/resources/js/controller.js"/>"/>
 <%@ include file="/WEB-INF/views/template/footer.jsp" %>

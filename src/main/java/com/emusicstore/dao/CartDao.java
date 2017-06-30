@@ -8,9 +8,9 @@ import com.emusicstore.model.Cart;
 public interface CartDao {
     Cart create(Cart cart);
 
-    Cart read(Long cartId);
+    Cart read(String cartId);
 
-    void update(Long cartId, Cart cart);
+    void update(String cartId, Cart cart);
 
-    void delete(Long cartId);
+    void delete(String cartId);
 }

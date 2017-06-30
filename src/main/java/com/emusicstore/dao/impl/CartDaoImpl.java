@@ -13,10 +13,10 @@ import java.util.HashMap;
 
 @Repository
 public class CartDaoImpl implements CartDao {
-    private HashMap<Long, Cart> listOfCarts;
+    private HashMap<String, Cart> listOfCarts;
 
     public CartDaoImpl() {
-        listOfCarts = new HashMap<Long, Cart>();
+        listOfCarts = new HashMap<String, Cart>();
     }
 
     public Cart create(Cart cart) {
@@ -30,11 +30,11 @@ public class CartDaoImpl implements CartDao {
         return cart;
     }
 
-    public Cart read(Long cartId) {
+    public Cart read(String cartId) {
         return listOfCarts.get(cartId);
     }
 
-    public void update(Long cartId, Cart cart) {
+    public void update(String cartId, Cart cart) {
         if (!listOfCarts.containsKey(cartId)) {
             throw new IllegalArgumentException(String.format("Cannot update cart. " +
                     "The cart doesn't exist", cart.getCartId()));
@@ -43,7 +43,7 @@ public class CartDaoImpl implements CartDao {
         listOfCarts.put(cartId, cart);
     }
 
-    public void delete (Long cartId){
+    public void delete (String cartId){
         if(!listOfCarts.containsKey(cartId)){
             throw new IllegalArgumentException(String.format("Cannot delete cart. " +
                     "The cart doesn't exist", cartId));
