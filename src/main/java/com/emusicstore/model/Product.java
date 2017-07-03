@@ -1,10 +1,13 @@
 package com.emusicstore.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by genji on 6/25/2017.
@@ -12,7 +15,10 @@ import javax.validation.constraints.Min;
 
 @Entity
 @Table(name="Product")
-public class Product {
+public class Product implements Serializable{
+
+
+    private static final long serialVersionUID = -5684031680543919300L;
 
     @Id
     @Column(name="id")
@@ -35,6 +41,12 @@ public class Product {
 
     @Transient
     private MultipartFile productImage;
+
+    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<CartItem> cartItemList;
+
+
 
     public String getProductName() {
         return productName;
@@ -114,5 +126,13 @@ public class Product {
 
     public void setProductImage(MultipartFile productImage) {
         this.productImage = productImage;
+    }
+
+    public List<CartItem> getCartItemList() {
+        return cartItemList;
+    }
+
+    public void setCartItemList(List<CartItem> cartItemList) {
+        this.cartItemList = cartItemList;
     }
 }
