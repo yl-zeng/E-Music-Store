@@ -1,5 +1,6 @@
 package com.emusicstore.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -8,6 +9,8 @@ import java.io.Serializable;
 /**
  * Created by genji on 7/4/2017.
  */
+
+@Entity
 public class BillingAddress implements Serializable{
 
     private static final long serialVersionUID = -6091579459463730482L;

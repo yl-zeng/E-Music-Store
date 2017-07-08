@@ -23,7 +23,7 @@ public class Product implements Serializable{
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long productId;
+    private int productId;
 
     @NotEmpty (message = "This product name can't be null")
     private String productName;
@@ -104,11 +104,11 @@ public class Product implements Serializable{
         this.unitInStock = unitInStock;
     }
 
-    public Long getProductId() {
+    public int getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(int productId) {
         this.productId = productId;
     }
 
