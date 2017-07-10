@@ -14,6 +14,7 @@ public class Users {
     @Id
     @GeneratedValue
     private int userId;
+
     private String username;
     private String password;
     private boolean enabled;
