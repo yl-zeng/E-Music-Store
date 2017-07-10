@@ -1,0 +1,120 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ include file="/WEB-INF/views/template/header.jsp" %>
+
+<html>
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container-wrapper" style="margin-top:50px">
+    <div class="container">
+        <div class="page-header">
+            <h1>Register Customer</h1>
+
+            <p class="lead">Fill the below information</p>
+        </div>
+
+        <form:form action="${pageContext.request.contextPath}/register"
+                   method="post" commandName="customer">
+
+        <h3>Basic Info</h3>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <form:input path="customerName" id="name" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <form:input path="customerEmail" id="email" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <form:input path="customerPhone" id="phone" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="username">User Name</label>
+            <form:input path="username" id="username" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <form:password path="password" id="password" class="form-control"/>
+        </div>
+
+        <h3>Billing Address</h3>
+
+        <div class="form-group">
+            <label for="billingStreet">Street Name</label>
+            <form:input path="billingAddress.streetName" id="billingStreet" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="billingApartmentNumber">Apartment Number</label>
+            <form:input path="billingAddress.apartmentNumber" id="billingApartmentNumber" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="billingCity">City</label>
+            <form:input path="billingAddress.city" id="billingCity" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="billingState">State</label>
+            <form:input path="billingAddress.state" id="billingState" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="billingCountry">Country</label>
+            <form:input path="billingAddress.country" id="billingCountry" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="billingZipcode">Zipcode</label>
+            <form:input path="billingAddress.zipCode" id="billingZipcode" class="form-control"/>
+        </div>
+        
+        <h3>Shipping Address</h3>
+
+        <div class="form-group">
+            <label for="shippingStreet">Street Name</label>
+            <form:input path="shippingAddress.streetName" id="shippingStreet" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="shippingApartmentNumber">Apartment Number</label>
+            <form:input path="shippingAddress.apartmentNumber" id="shippingApartmentNumber" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="shippingCity">City</label>
+            <form:input path="shippingAddress.city" id="shippingCity" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="shippingState">State</label>
+            <form:input path="shippingAddress.state" id="shippingState" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="shippingCountry">Country</label>
+            <form:input path="shippingAddress.country" id="shippingCountry" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="shippingZipcode">Zipcode</label>
+            <form:input path="shippingAddress.zipCode" id="shippingZipcode" class="form-control"/>
+        </div>
+
+        <br/>
+
+        <input type="submit" value="submit" class="btn btn-primary"/>
+        <a href="<c:url value="/"/>" >Cancel</a>
+        </form:form>
+
+
+        <%@ include file="/WEB-INF/views/template/footer.jsp" %>
