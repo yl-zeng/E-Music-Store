@@ -2,8 +2,7 @@
 var cartApp = angular.module ("cartApp",[]);
 
 cartApp.controller("cartCtrl",function ($scope,$http){
-    $scope.refreshCart = function(cartId){
-        console.log("refresh: ",cartId);
+    $scope.refreshCart = function(){
         $http.get('/rest/cart/' + $scope.cartId).success(function (data){
            $scope.cart = data;
            console.log("cart: ",$scope.cart);
@@ -11,12 +10,11 @@ cartApp.controller("cartCtrl",function ($scope,$http){
     };
 
     $scope.deleteCart = function(){
-        $http.delete("/rest/cart/" + $scope.cartId).success($scope.refreshCart($scope.cartId));
+        $http.delete("/rest/cart/" + $scope.cartId).success($scope.refreshCart());
     };
 
     $scope.initCartId = function(cartId){
         $scope.cartId = cartId;
-        console.log(cartId);
         $scope.refreshCart(cartId);
     };
 
@@ -29,15 +27,24 @@ cartApp.controller("cartCtrl",function ($scope,$http){
     };
 
     $scope.removeFromCart = function(productId){
-        $http.put("/rest/cart/remove/" + productId).success(function(data){
-            $scope.refreshCart($http.get("/rest/cart/cartId"));
+        $http.put("/rest/cart/remove/" + productId).success(function(){
             alert("product successfully removed");
         })
     };
 
     $scope.clearCart = function(cartId){
-        $http.delete("/rest/cart/" + cartId).success(function(data){
-            $scope.refreshCart($http.get("/rest/cart/cartId"));
+        $http.delete("/rest/cart/" + cartId).success(function(){
+            $scope.refreshCart();
         })
     };
+
+    $scope.calGrandTotal = function () {
+        var grandTotal = 0;
+
+        for(var i = 0; i<$scope.cartItems.length; i++){
+            grandTotal += $scope.cartItem[i].totalPrice;
+        }
+
+        return grandTotal;
+    }
 });
