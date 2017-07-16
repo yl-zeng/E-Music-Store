@@ -1,14 +1,12 @@
 package com.emusicstore.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by genji on 7/4/2017.
  */
+@Entity
 public class CustomerOrder implements Serializable{
 
     private static final long serialVersionUID = 2983360377227484514L;
