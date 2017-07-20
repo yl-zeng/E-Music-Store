@@ -23,11 +23,14 @@
 
         <div class="form-group">
             <label for="name">Name</label>
+            <form:errors path="customerName" cssStyle="color: red"/>
             <form:input path="customerName" id="name" class="form-control"/>
         </div>
 
         <div class="form-group">
             <label for="email">Email</label>
+            <span style="color:red">${emailMsg}</span>
+            <form:errors path="customerName" cssStyle="color: red"/>
             <form:input path="customerEmail" id="email" class="form-control"/>
         </div>
 
@@ -38,11 +41,14 @@
 
         <div class="form-group">
             <label for="username">User Name</label>
+            <span style="color:red">${usernameMsg}</span>
+            <form:errors path="username" cssStyle="color: red"/>
             <form:input path="username" id="username" class="form-control"/>
         </div>
 
         <div class="form-group">
             <label for="password">Password</label>
+            <form:errors path="password" cssStyle="color: red"/>
             <form:password path="password" id="password" class="form-control"/>
         </div>
 
