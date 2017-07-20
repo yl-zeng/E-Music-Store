@@ -2,8 +2,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ include file="/WEB-INF/views/template/header.jsp" %>
 
-<html>
-
 
 <!-- Marketing messaging and featurettes
 ================================================== -->
@@ -45,5 +43,6 @@
             </table>
 
         </div>
+
 
         <%@ include file="/WEB-INF/views/template/footer.jsp" %>
