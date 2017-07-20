@@ -13,13 +13,16 @@
 
     <title>Yunlin's E-Music-Store</title>
 
-    <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+
 
     <!-- Bootstrap core CSS -->
     <link href="<c:url value='/resources/css/bootstrap.min.css'/>" rel="stylesheet">
     <link href="<c:url value='/resources/css/main.css'/>" rel="stylesheet">
     <link href="<c:url value='/resources/css/carousel.css'/>" rel="stylesheet">
+    <link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Angular -->
+
 </head>
 <!-- NAVBAR
 ================================================== -->
