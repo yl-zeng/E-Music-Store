@@ -7,9 +7,9 @@
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://b35f65a0af3434:662a60cc@us-cdbr-iron-east-03.cleardb.net/heroku_f471f0451b57612?reconnect=true" />
-        <property name="username" value="b35f65a0af3434" />
-        <property name="password" value="662a60cc" />
+        <property name="url" value="jdbc:mysql://localhost:3306/emusicstore" />
+        <property name="username" value="root" />
+        <property name="password" value="7758258" />
     </bean>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -72,8 +72,5 @@
     <bean id="flowHandlerAdapter" class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
         <property name="flowExecutor" ref="flowExecutor"/>
     </bean>
-
-
-
 
 </beans>
