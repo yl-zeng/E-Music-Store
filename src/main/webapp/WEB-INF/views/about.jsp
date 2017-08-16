@@ -2,18 +2,20 @@
 <%@ include file="/WEB-INF/views/template/header.jsp" %>
 
 
-<section>
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Customer Register Successfully</h1>
+<div class="container-wrapper" style="margin-top: 80px">
+    <div class="container">
+        <section>
+            <div class="jumbotron">
+                <h1 class="display-3">Hello, world!</h1>
+                <p class="lead">This is Yunlin, a recent graduate who loves coding especially crafting beautiful website.</p>
+                <hr class="my-4">
+                <p>Learn more about me from my personal website.</p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="http://yunlin.io/" role="button">Learn more</a>
+                </p>
+            </div>
+        </section>
 
-        </div>
-    </div>
-</section>
 
-<section class="container" ng-app="cartApp">
-
-    <a href="<spring:url value="/product/productList" />" class="btn btn-default">Products</a>
-</section>
 
 <%@ include file="/WEB-INF/views/template/footer.jsp" %>
