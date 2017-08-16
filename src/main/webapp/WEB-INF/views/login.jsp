@@ -1,9 +1,9 @@
 <%@ include file="/WEB-INF/views/template/header.jsp"%>
 
-<div class="container-wrapper">
+<div class="container-wrapper" style="margin-top:70px">
     <div class="container">
         <div id="login-box">
-            <h2>Login with Username and Password</h2>
+            <h1>Login with Username and Password</h1>
 
             <c:if test="${not empty msg}">
                 <div class="msg">${msg}</div>
@@ -24,13 +24,11 @@
                     <input type="password" id="password" name="password" class="form-control"/>
                 </div>
 
-                <input type="submit" value="Submit" class="btn btn-default"/>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
 
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             </form>
         </div>
-    </div>
-</div>
 
 
 
